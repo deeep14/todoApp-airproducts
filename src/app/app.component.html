@@ -1,10 +1,26 @@
-<h2>Todo App</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<input id="newNotes">
-<button (click)="addNotes()">Add Notes</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+</head>
 
-<h3 *ngFor="let note of notes">
-  <b>* {{note.description}}</b>
-  <button (click)="deleteNotes(note.id)">Delete Notes</button>
-</h3>
+<body>
+  <div class="container">
+    <h1 class="title">Todo App</h1>
+    <div class="input-container">
+      <input id="newNotes" placeholder="Add a new note..." />
+      <button class="add-button" (click)="addNotes()">Add Note</button>
+    </div>
+    <div class="notes-container">
+      <div *ngFor="let note of notes" class="note-item">
+        <span class="note-description">{{ note.description }}</span>
+        <button class="delete-button" (click)="deleteNotes(note.id)">Delete</button>
+      </div>
+    </div>
+  </div>  
+</body>
 
+</html>
